@@ -1,0 +1,42 @@
+<div class = "container">
+
+    <h1 class="listtitle">{{profile.username}}</h1>
+
+    <div class="user white-heading">
+        <p>{{profile.name}}</p>
+        <p>{{datetodatestring profile.dateofbirth}}</p>
+        <p>Reputation: {{profile.reputation}}</p>
+		<form method="get" action="/flag">
+		{{#if ownprofile}}
+			<a href="/user/{{user.username}}/edit" class="btn btn-default btn-lg">Edit Profile</a>
+		{{else}}		
+			<a href="/messaging#{{profile.username}}" class = "btn btn-default btn-lg">Contact User</a>		
+			<button type="submit" class="btn btn-danger btn-lg" {{#if user.flagged}}disabled{{/if}}>
+				<span class="glyphicon glyphicon-flag" aria-hidden="true"></span> Flag user
+			</button>
+		{{/if}}
+		
+    	</form>
+		
+    </div>
+	<br />
+    {{#row items 4}}
+    <div class="col-md-3 portfolio-item">
+        <a href="/item/{{id}}">
+            <div class="thumbnail">
+                <img class="img-responsive" src="{{picture}}" alt="">
+                <div class = "caption-full">
+                    <h4>{{name}}</h4>
+                    {{!-- <span>{{#if given}}Given{{else}}Available{{/if}}</span> --}}
+                    {{!-- <div class="item-user">
+                        <span>{{user.name}}</span>
+                        <span>Reputation: {{user.reputation}}</span>
+                    </div> --}}
+                </div>
+            </div>
+        </a>
+    </div>
+    {{/row}}
+    
+   
+</div>

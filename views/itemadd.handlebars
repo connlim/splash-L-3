@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row" id="pwd-container">
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4">
+            <section class="form">
+                <form method="post" action="{{#if item}}/item/{{item.id}}/edit{{else}}/new{{/if}}">
+                    <h2>Submit an item</h2>
+                    {{#if error}} 
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>Error! </strong>{{ error }}
+                    </div>
+                    {{/if}}
+                    <input type="text" name="name" placeholder="Name" required class="form-control input-lg" value="{{item.name}}"/>
+                    <input type="text" name="location" placeholder="Location" required class="form-control input-lg" value="{{user.location}}"/>
+                    <textarea name="description" rows="6" col="500" class="form-control input-lg" required placeholder="Item Description">{{item.description}}</textarea>
+
+                    <input type="url" name="image" placeholder="Image URL (Optional)" class="form-control input-lg" value="{{item.picture}}"/>
+                    <footnote>We recommend <a href="">imgur.com </a> as an image host.</footnote>
+
+                    <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Submit</button>
+
+                </form>
+
+            </section>  
+        </div>
+        <div class="col-md-4"></div>
+    </div>  

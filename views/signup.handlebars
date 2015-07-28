@@ -1,0 +1,38 @@
+<div class="container">
+
+    <div class="row" id="pwd-container">
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4">
+            <section class="form">
+                <form method="post" action="/signup" role="signup">
+                    <h2>Signup</h2>
+                    {{#if error}} 
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>Error! </strong>{{ error }}
+                    </div>
+                    {{/if}}
+                    <input type="text" class="form-control input-lg" name="name" placeholder="Name" value="{{user.name}}" required />
+                    <input type="text" class="form-control input-lg" name="username" placeholder="Username" value="{{user.username}}" required />
+
+                    <input type="password" class="form-control input-lg" id="password" name="password" placeholder="Password" required />
+                    <div class="pwstrength_viewport_progress"></div>
+                    <input type="password" class="form-control input-lg" id="password2" name="password2" placeholder="Confirm password" required />
+                <input type="text" class="form-control input-lg" id="picurl" name="picurl" placeholder="Insert Avatar URL" required />
+		    <input type="text" class="form-control input-lg" name="dob" placeholder="DOB: YYYY-MM-DD" value="{{user.dob}}" required />
+		
+			<input type="text" class="form-control input-lg" name="location" placeholder="Default location" value="{{user.location}}" required />
+                    <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Sign up</button>
+                    <div class="text">
+                        <a href="/login">Login</a> instead
+                    </div>
+                </form>
+                <small href="">Back to Home</small>
+            </section>  
+        </div>
+
+
+    </div>
+
+</div>

@@ -1,0 +1,12 @@
+use admin
+db.createUser({
+	user: "admin",
+	pwd: "pass",
+	roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+})
+use derp
+db.createUser({
+	user: "derp",
+	pwd: "derp123",
+	roles: [ "readWrite" ]
+})

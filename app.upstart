@@ -1,0 +1,10 @@
+description "app"
+author      "Ambrose Chua"
+
+respawn
+respawn limit 15 5
+
+start on runlevel [2345]
+stop on runlevel [06]
+
+exec start-stop-daemon --start --make-pidfile --pidfile /var/run/app.pid --chuid app --chdir /vagrant --exec /usr/bin/npm start >> /vagrant/app.log 2>&1

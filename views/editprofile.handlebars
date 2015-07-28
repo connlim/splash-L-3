@@ -1,0 +1,31 @@
+
+<div class="container">
+
+    <div class="row" id="pwd-container">
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4">
+            <section class="form">
+                <form method="get" action="/user/{{user.username}}/edit">
+                    <h2>Edit Profile</h2>
+                    {{#if error}} 
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>Error! </strong>{{ error }}
+                    </div>
+                    {{/if}}
+                    <input type="password" class="form-control input-lg" id="oldpassword" name="oldpassword" placeholder="Old Password" required />
+                    <input type="password" class="form-control input-lg" id="newpassword" name="newpassword" placeholder="New Password" />
+					<input type="password" class="form-control input-lg" id="newpassword2" name="newpassword2" placeholder="Confirm New Password" /> 
+                    <div class="pwstrength_viewport_progress"></div>
+					<input type="text" class="form-control input-lg" name="location" placeholder="Default location" value="{{user.location}}" required />
+                    <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Save</button>
+                </form>
+                <small href="">Back to Profile</small>
+            </section>  
+        </div>
+
+
+    </div>
+
+</div>

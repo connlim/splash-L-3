@@ -1,0 +1,26 @@
+.list-group, form.container .input-group {
+	max-width: 730px;
+	margin: 0 auto;
+}
+
+form.container #message {
+	height: 34px;
+	font-size: 14px;
+}
+
+.list-group-item:last-child {
+	margin-bottom: 56px;
+}
+.list-group {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+.list-group .isself {
+	color: #888;
+}
+form[name=messageform] {
+	position: fixed;
+	bottom: 10px;
+	width: 100%;
+	z-index: 100000;
+}

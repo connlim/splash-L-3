@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row" id="pwd-container">
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4">
+            <section class="form">
+                <form>
+                    <h2>{{item.name}}</h2>
+                    <img src="{{item.picture}}" class="img-responsive" />
+
+                    <div class="item-description">
+                        {{!-- <p class="item-state">
+                            {{#if item.given}}Given{{else}}Available{{/if}}
+                        </p> --}}
+                        <p class="item-location">
+                            Location: {{item.location}}
+                        </p>
+                        {{newlinetobr item.description}}
+                    </div>
+
+                    <div class="item-user">
+                        <span><a href="/user/{{item.user.username}}">{{item.user.username}}</a></span>
+                        <span>Reputation: {{item.user.reputation}}</span>
+                    </div>
+                    <div class="item-tools">
+						{{#if isowner}}
+                        <a href="/item/{{item.id}}/edit" class="btn btn-primary">Edit</a>
+						{{#if item.wanter}}
+						<a href="/item/{{item.id}}/get" class="btn btn-primary">Give <span class="badge">!</span></a>
+						{{/if}}
+						{{else}}
+						{{!-- {{#if inpossession}}
+							<a href="/item/{{item.id}}/return">Return</a>
+						{{else}} --}}
+							<a href="/item/{{item.id}}/get" class="btn btn-primary">Get</a>{{!-- 
+						{{/if}} --}}
+						{{/if}}
+                    </div>
+
+                </form>	
+            </section>  
+        </div>
+    </div>  

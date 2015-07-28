@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/css/messaging.css" />
+
+<script type="text/x-handlebars-template">
+<div class="list-group">
+	\{{#each messages}}
+	<div class="list-group-item\{{#if isself}} isself\{{/if}}">
+		\{{text}}
+ 	</div>
+	\{{/each}}
+</div>
+</script>
+
+<form class="container" name="messageform" id="messageform">
+	<div class="input-group">
+		<input type="text" class="form-control" placeholder="Enter message" id="message" required>
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-send" aria-hidden="true"></span></button>
+		</span>
+	</div>
+</form>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	var username = "{{user.username}}";
+</script>
+<script src="/js/handlebars-v3.0.3.js"></script>
+<script src="/js/messaging.js"></script>

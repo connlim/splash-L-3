@@ -1,0 +1,26 @@
+
+<!-- Page Content -->
+<div class="container randomthings">
+
+    <h1 class="listtitle">{{title}}</h1>
+
+    {{#row items 4}}
+    <div class="col-md-3 portfolio-item">
+        <a href="/item/{{id}}">
+            <div class="thumbnail">
+				{{#if isowner}}{{#if wanter}}<span style="background-color: #f77; position: absolute; right: 25px; top: 10px;" class="badge">!</span>{{/if}}{{/if}}
+                <img class="img-responsive" src="{{#if picture}}{{picture}}{{else}}http://www.engraversnetwork.com/files/placeholder.jpg{{/if}}" alt="">
+                <div class = "caption-full">
+                    <h4>{{name}}</h4>
+                    {{!-- <span>{{#if available}}Shared{{else}}Available{{/if}}</span> --}}
+                    <div class="item-user">
+                        <span>{{user.username}}</span>
+                        <span>Reputation: {{user.reputation}}</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    {{/row}}
+</div>
+<!-- /.container -->

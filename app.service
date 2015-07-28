@@ -1,0 +1,12 @@
+[Unit]
+Description=app
+
+
+[Service]
+Type=forking
+WorkingDirectory=/vagrant
+ExecStart=/usr/bin/npm start
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
